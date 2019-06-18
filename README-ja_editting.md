@@ -28,7 +28,7 @@
 
 ## 含まれるコンポーネント
 
-* [OpenWhisk](https://console.ng.bluemix.net/openwhisk): 拡張性の高いサーバーレス環境でオンデマンドでコードを実行できます。
+* [IBM Cloud Functions](https://www.ibm.com/cloud/functions): 拡張性の高いサーバーレス環境でオンデマンドでコードを実行できます。
 * [Watson Text to Speech](https://www.ibm.com/watson/jp-ja/developercloud/text-to-speech.html): テキストから自然な音声を合成します。
 * [Watson Language Translator](https://www.ibm.com/watson/jp-ja/developercloud/language-translator.html): コンテンツのテキストを、ある言語から別の言語にリアルタイムで翻訳します。
 
@@ -57,18 +57,17 @@ iex(New-Object Net.WebClient).DownloadString('https://clis.ng.bluemix.net/instal
 ```
 インストールが完了したら、バージョンを表示してCLIが動作していることを確認します
 ```
-bx -v
+ibmcloud -v
 ```
 "Cloud Functions" プラグインもインストールしてください
 ```
-bx plugin install Cloud-Functions -r Bluemix
+ibmcloud plugin install cloud-functions
 ```
 
 IBM Cloud Cliがすでにインストールされている場合、Cloud Functionsプラグインが最新のバージョンであることを確認してください
 ```
-bx plugin update cloud-functions
+ibmcloud plugin update cloud-functions
 ```
-
 
 # 手順
 1. [サービスの作成](#1-create-services)
@@ -82,10 +81,10 @@ bx plugin update cloud-functions
 ### 1. サービスの作成
 
 必要な IBM Cloud サービスを作成します。
-- [Speech To Text](https://console.bluemix.net/catalog/services/speech-to-text)
-- [Text To Speech](https://console.bluemix.net/catalog/services/text-to-speech)
-- [Watson IoT Platform](https://console.bluemix.net/catalog/services/internet-of-things-platform)
-- [Watson Language Translator](https://console.bluemix.net/catalog/services/language-translator)
+- [Speech To Text](https://cloud.ibm.com/catalog/services/speech-to-text)
+- [Text To Speech](https://cloud.ibm.com/catalog/services/text-to-speech)
+- [Watson IoT Platform](https://cloud.ibm.com/catalog/services/internet-of-things-platform)
+- [Watson Language Translator](https://cloud.ibm.com/catalog/services/language-translator)
 
 SMS統合のため、次のサードパーティ・サービスを作成します。
 
@@ -108,6 +107,22 @@ SMS統合のため、次のサードパーティ・サービスを作成しま�
 <p align="center">
 <img src="https://i.imgur.com/S0iNZu0.png">
 </p>
+
+Navigate to the IBM Cloud dashboard at [https://cloud.ibm.com](https://cloud.ibm.com) and click the "Catalog" button in the upper right
+<p align="center">
+<img src="https://i.imgur.com/vFCHSF4.png">
+</p>
+
+Type in the name of the service and select the resulting icon
+<p align="center">
+<img src="https://i.imgur.com/X78OVt7.png">
+</p>
+
+Select the pricing plan and click "Create". If deploying on an IBM Lite account, be sure to select the free "Lite" plan
+<p align="center">
+<img src="https://i.imgur.com/S0iNZu0.png">
+</p>
+
 
 #### 追加の設定: Watson IoTサービスの資格情報を生成する
 
